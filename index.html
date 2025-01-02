@@ -4,53 +4,153 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Ticket Booking</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1> Ticket Booking</h1>
-    <form id="bookingForm">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-
-      <div class="form-group">
-        <label for="type">Booking Type:</label>
-        <select id="type" name="type" required>
-          <option value="" disabled selected>Select Type</option>
-          <option value="railway">Railway</option>
-          <option value="flight">Flight</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="date">Travel Date:</label>
-        <input type="date" id="date" name="date" required>
-      </div>
-
-      <div class="form-group">
-        <label for="destination">Destination:</label>
-        <input type="text" id="destination" name="destination" required>
-      </div>
-
-      <button type="submit" class="btn">Book Now</button>
-    </form>
-    <div id="message"></div>
-  </div>
-
-  <!-- Popup Modal -->
-  <div id="confirmationModal" class="modal">
-    <div class="modal-content">
-      <h2 id="modalMessage"></h2>
-      <button class="btn" onclick="closeModal()">OK</button>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">TicketBooking.com</div>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search for tickets...">
+      <button id="search-btn">Search</button>
     </div>
-  </div>
+    <div><button>booking ticket</button></div>
+    <div class="auth-links">
+        <a href="../loginpage/index.html"><button id="login" >Login</button> </a>
+        <a href="../sin-in_page/signin.html"><button id="signin">Sign Up</button> </a>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="main">
+    <section class="ticket-category">
+      <h2>Bus Tickets</h2>
+      <div class="ticket-card" onclick="showDetails('Bus Ticket 1')">
+        <div class="info-box">
+            <button>Book Ticket</button>
+            <b style="color: red;">Satna to Mahiar</b><br>
+            <b><span class="label">Day: Monday</span></b>
+            <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+            <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+            <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+            <b><span class="label">Rating of Bus:</span>5</b><br>
+            <b><span class="label">Seats Available:</span>7</b>
+        </div>
+      </div>
+      <div class="ticket-card" onclick="showDetails('Bus Ticket 2')">
+        <div class="info-box">
+            <button>Book Ticket</button>
+            <b style="color: red;">Mahiar to Pune</b><br>
+            <b><span class="label">Day: Monday</span></b>
+            <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+            <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+            <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+            <b><span class="label">Rating of Bus:</span>5</b><br>
+            <b><span class="label">Seats Available:</span>7</b>
+        </div>
+      </div>
+      <div class="ticket-card" onclick="showDetails('Bus Ticket 2')">
+        <div class="info-box">
+            <button>Book Ticket</button>
+            <b style="color: red;">Pune to Patna</b><br>
+            <b><span class="label">Day: Monday</span></b>
+            <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+            <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+            <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+            <b><span class="label">Rating of Bus:</span>5</b><br>
+            <b><span class="label">Seats Available:</span>7</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticket-category">
+      <h2>Train Tickets</h2>
+      <div class="ticket-card" onclick="showDetails('Train Ticket 1')">
+        <div class="info-box">
+            <button>Book Ticket</button>
+            <b style="color: red;">Pune to Patna</b><br>
+            <b><span class="label">Day: Monday</span></b>
+            <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+            <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+            <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+            <b><span class="label">Rating of Bus:</span>5</b><br>
+            <b><span class="label">Seats Available:</span>7</b>
+        </div>
+       </div>
+      <div class="ticket-card" onclick="showDetails('Train Ticket 2')">
+        <div class="info-box">
+            <button>Book Ticket</button>
+            <b style="color: red;">Delhi to Mumbai</b><br>
+            <b><span class="label">Day: Monday</span></b>
+            <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+            <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+            <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+            <b><span class="label">Rating of Bus:</span>5</b><br>
+            <b><span class="label">Seats Available:</span>7</b>
+        </div>      
+        </div>
+      <div class="ticket-card" onclick="showDetails('Train Ticket 2')">
+        <div class="info-box">
+            <button>Book Ticket</button>
+            <b style="color: red;">Satna to Mumbai</b><br>
+            <b><span class="label">Day: Monday</span></b>
+            <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+            <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+            <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+            <b><span class="label">Rating of Bus:</span>5</b><br>
+            <b><span class="label">Seats Available:</span>7</b>
+        </div>
+        </div>
+    </section>
+
+    <section class="ticket-category">
+      <h2>Flight Tickets</h2>
+      <div class="ticket-card" onclick="showDetails('Flight Ticket 1')">
+        <div class="info-box">
+          <button>Book Ticket</button>
+          <b style="color: red;">Indore to Mumbai</b><br>
+          <b><span class="label">Day: Monday</span></b>
+          <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+          <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+          <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+          <b><span class="label">Rating of Bus:</span>5</b><br>
+          <b><span class="label">Seats Available:</span>7</b>
+      </div>
+    </div>
+      <div class="ticket-card" onclick="showDetails('Flight Ticket 2')">
+        <div class="info-box">
+          <button>Book Ticket</button>
+          <b style="color: red;">Delhi to Mumbai</b><br>
+          <b><span class="label">Day: Monday</span></b>
+          <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+          <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+          <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+          <b><span class="label">Rating of Bus:</span>5</b><br>
+          <b><span class="label">Seats Available:</span>7</b>
+      </div>
+      <div class="info-box">
+        <button>Book Ticket</button>
+        <b style="color: red;">Bhopal to Mumbai</b><br>
+        <b><span class="label">Day: Monday</span></b>
+        <b><span class="label">Bus Date:</span>19-11-2024</b><br>
+        <b><span class="label">Arrival Time:</span>4:00 pm</b><br>
+        <b><span class="label">Departure Time:</span>4:15 pm</b><br>
+        <b><span class="label">Rating of Bus:</span>5</b><br>
+        <b><span class="label">Seats Available:</span>7</b>
+    </div>
+    </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Contact us at: support@ticketbooking.com</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
